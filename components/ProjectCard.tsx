@@ -28,8 +28,8 @@ export function ProjectCard({ project, featured = false }: { project: HubProject
       aria-labelledby={titleId}
       style={{ "--tint": project.tint } as CSSProperties}
       className={cn(
-        "group grain relative isolate flex flex-col overflow-hidden rounded-[var(--radius-card)] bg-navy p-7 text-white shadow-lift md:p-10",
-        featured ? "min-h-[540px] lg:min-h-full" : "min-h-[300px]",
+        "group grain relative isolate flex flex-col overflow-hidden rounded-[var(--radius-card)] bg-navy p-7 text-white shadow-lift md:p-9 lg:p-8 xl:p-9 short:p-6",
+        featured ? "min-h-[480px] lg:min-h-[320px]" : "min-h-[300px] lg:min-h-[320px]",
         live && "transition-transform duration-500 hover:-translate-y-1",
       )}
     >
@@ -39,10 +39,10 @@ export function ProjectCard({ project, featured = false }: { project: HubProject
             src={project.image.src}
             alt={project.image.alt}
             fill
-            sizes="(min-width: 1024px) 600px, 100vw"
+            sizes="(min-width: 1024px) 520px, 100vw"
             className="-z-20 object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
           />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy via-navy/80 to-navy/5" aria-hidden />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy from-20% via-navy/85 via-55% to-navy/25" aria-hidden />
         </>
       ) : (
         <>
@@ -58,7 +58,7 @@ export function ProjectCard({ project, featured = false }: { project: HubProject
         </>
       )}
 
-      <div className="mb-auto pb-10">
+      <div className="mb-auto pb-6 short:pb-3">
         <StatusBadge live={live} />
       </div>
 
@@ -68,20 +68,20 @@ export function ProjectCard({ project, featured = false }: { project: HubProject
 
       {project.logo ? (
         <h3 id={titleId} className="mt-4">
-          <span className="relative block h-16 md:h-20" style={{ aspectRatio: project.logo.ratio }}>
+          <span className="relative block h-16 xl:h-[72px] short:h-12" style={{ aspectRatio: project.logo.ratio }}>
             <Image src={project.logo.src} alt={project.name} fill sizes="220px" className="object-contain object-left" />
           </span>
         </h3>
       ) : (
-        <h3 id={titleId} className="mt-3 font-display text-[30px] font-extrabold leading-[1.05] tracking-[-0.01em] md:text-[38px]">
+        <h3 id={titleId} className="mt-3 font-display text-[30px] font-extrabold leading-[1.05] tracking-[-0.01em] md:text-[34px]">
           {project.name}
         </h3>
       )}
 
-      <p className={cn("mt-4 max-w-xl text-white/80", featured ? "text-[16px] md:text-[18px]" : "text-[15px] md:text-[16px]")}>{project.description}</p>
+      <p className={cn("mt-4 max-w-xl text-white/80", featured ? "text-[16px] xl:text-[17px]" : "text-[15px] xl:text-[16px]")}>{project.description}</p>
 
       {project.tags && (
-        <ul className="mt-5 flex flex-wrap gap-2" aria-label="Frentes do projeto">
+        <ul className="mt-5 flex flex-wrap gap-2 lg:hidden" aria-label="Frentes do projeto">
           {project.tags.map((tag) => (
             <li key={tag} className="rounded-full border border-white/20 px-3 py-1 font-ui text-[13px] font-medium text-white/85">
               {tag}
@@ -90,7 +90,7 @@ export function ProjectCard({ project, featured = false }: { project: HubProject
         </ul>
       )}
 
-      <div className="mt-7">
+      <div className="mt-7 short:mt-5">
         {live ? (
           <a
             href={project.url}

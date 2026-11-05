@@ -91,7 +91,7 @@ export function SectionTitle({
   align?: "left" | "center";
   tone?: "dark" | "light";
   className?: string;
-  as?: "h2" | "h3";
+  as?: "h1" | "h2" | "h3";
 }) {
   return (
     <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center [&>p:first-child]:justify-center", className)}>

@@ -28,12 +28,9 @@ export const viewport: Viewport = { themeColor: "#0f152d" };
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="pt-BR" className={`${raleway.variable} ${openSans.variable} ${montserrat.variable}`}>
-      <body className="flex min-h-dvh flex-col">
-        <a href="#projetos" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-navy">
-          Ir para os projetos
-        </a>
+      <body className="flex min-h-dvh flex-col bg-mist">
         <SiteHeader />
-        <main id="inicio" className="flex-1">
+        <main id="projetos" className="flex flex-1 flex-col">
           {children}
         </main>
       </body>

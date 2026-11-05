@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Telas de notebook mais baixas: compacta o layout para a página caber sem rolagem */
+@custom-variant short (@media (min-width: 1024px) and (max-height: 820px));
+
 @theme {
   /* Cores da marca Cross Missions (logotipo e site atual) */
   --color-navy: #0f152d;         /* azul-noite da marca: fundos escuros */
@@ -26,13 +29,17 @@
   --shadow-card: 0 1px 2px rgb(15 21 45 / 0.06), 0 12px 32px -12px rgb(15 21 45 / 0.2);
   --shadow-lift: 0 2px 4px rgb(15 21 45 / 0.08), 0 28px 56px -20px rgb(15 21 45 / 0.4);
 
-  --animate-spin-slow: spin 60s linear infinite;
+  --animate-marquee: marquee 45s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 88px;
     -webkit-text-size-adjust: 100%;
   }
   body {
@@ -71,6 +78,9 @@
 }
 
 @layer components {
+  .marquee-mask {
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  }
   .dots {
     background-image: radial-gradient(rgb(255 255 255 / 0.14) 1.4px, transparent 1.6px);
     background-size: 18px 18px;

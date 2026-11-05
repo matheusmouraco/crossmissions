@@ -22,12 +22,6 @@ export const site = {
   },
 } as const;
 
-export const nav = [
-  { label: "Projetos", href: "#projetos" },
-  { label: "Quem somos", href: "#quem-somos" },
-  { label: "Contato", href: "#contato" },
-] as const;
-
 /** Países de língua portuguesa onde a missão atua ou quer chegar */
 export const countries = [
   { code: "br", name: "Brasil" },
