@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  /* Cores da marca Cross Missions (logotipo e site atual) */
+  --color-navy: #0f152d;         /* azul-noite da marca: fundos escuros */
+  --color-navy-2: #171f3f;       /* um tom acima, para cartões sobre o azul */
+  --color-primary: #0f152d;      /* títulos sobre fundo claro */
+  --color-secondary: #232c57;
+  --color-accent: #fc843c;       /* laranja do logotipo: botões e detalhes */
+  --color-accent-dark: #fd9b5e;  /* hover dos botões laranja */
+  --color-accent-ink: #b24f14;   /* laranja escuro para texto sobre fundo claro (AA) */
+  --color-on-accent: #0f152d;    /* texto sobre fundo laranja */
+  --color-sun: #f6b42a;
+  --color-ink: #12141c;
+  --color-muted: #545a6b;
+  --color-mist: #f6f4f0;
+  --color-line: #e7e2d9;
+
+  --font-display: var(--font-raleway), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-ui: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 24px;
+  --radius-btn: 10px;
+
+  --shadow-card: 0 1px 2px rgb(15 21 45 / 0.06), 0 12px 32px -12px rgb(15 21 45 / 0.2);
+  --shadow-lift: 0 2px 4px rgb(15 21 45 / 0.08), 0 28px 56px -20px rgb(15 21 45 / 0.4);
+
+  --animate-spin-slow: spin 60s linear infinite;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    overflow-x: clip;
+    background: var(--color-navy);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-sun);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-navy);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .dots {
+    background-image: radial-gradient(rgb(255 255 255 / 0.14) 1.4px, transparent 1.6px);
+    background-size: 18px 18px;
+  }
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.1;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
