@@ -47,17 +47,22 @@ export const hubProjects: HubProject[] = [
     tint: "#f28c38",
   },
   {
+    slug: "crossgifts",
+    name: "CrossGifts",
+    kind: "Evangelismo",
+    description:
+      "Livretos cristãos gratuitos em PDF. Um movimento evangelístico que partilha o melhor presente: o amor de Deus.",
+    url: "https://www.crossgift.org/",
+    urlLabel: "crossgift.org",
+    logo: { src: "/img/marca/crossgifts-branco.svg", ratio: 2117 / 1657, tall: true },
+    tags: ["Livretos", "Evangelismo", "Porto"],
+    tint: "#f26508",
+  },
+  {
     slug: "escola-do-sobrenatural",
     name: "Escola do Sobrenatural",
     kind: "Formação",
     description: "Um espaço de formação e crescimento na fé, para viver e anunciar o Reino de Deus. O site está em fase final.",
     tint: "#8f97f5",
-  },
-  {
-    slug: "the-best-gift",
-    name: "The Best Gift",
-    kind: "Novo projeto",
-    description: "Um novo projeto da Cross Missions está a caminho. Em breve, mais novidades por aqui.",
-    tint: "#f6b42a",
   },
 ];

@@ -1,6 +1,7 @@
 import { FlagsMarquee } from "@/components/FlagsMarquee";
 import { CurrentYear } from "@/components/layout/CurrentYear";
 import { Reveal } from "@/components/motion";
+import { MatilabSeal } from "@/components/MatilabSeal";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Container, SectionTitle } from "@/components/ui";
 import { hubProjects } from "@/content/projects";
@@ -21,7 +22,7 @@ export default function HomePage() {
               className="max-w-none lg:[&_h1]:text-[42px] xl:[&_h1]:text-[48px] short:[&_h1]:mt-2 short:[&_h1]:text-[36px] [&>div]:mt-3 md:[&>div]:text-[17px] short:[&>div]:mt-2 short:[&>div]:text-[15px]"
             />
           </Reveal>
-          <div className="mt-8 grid flex-1 gap-5 lg:mt-7 short:mt-5 md:grid-cols-2 lg:grid-cols-[1.25fr_1.25fr_1fr_1fr] xl:gap-6">
+          <div className="mt-8 grid flex-1 gap-5 lg:mt-7 short:mt-5 md:grid-cols-2 lg:grid-cols-[1.2fr_1.2fr_1.2fr_1fr] xl:gap-6">
             {hubProjects.map((project, i) => (
               <Reveal key={project.slug} delay={0.1 * i} className="[&>article]:h-full">
                 <ProjectCard project={project} featured={Boolean(project.url)} />
@@ -37,14 +38,15 @@ export default function HomePage() {
           <p>
             © <CurrentYear /> {site.legalName}
           </p>
-          <p className="flex flex-wrap gap-x-5">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <a href={`mailto:${site.email}`} className="hover:text-white">
               {site.email}
             </a>
             <a href={site.instagram.url} target="_blank" rel="noopener noreferrer" className="hover:text-white">
               {site.instagram.handle}
             </a>
-          </p>
+            <MatilabSeal size="sm" className="font-ui" />
+          </div>
         </Container>
       </footer>
     </>

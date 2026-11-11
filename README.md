@@ -3,8 +3,9 @@
 Site principal da Cross Missions (https://crossmissions.com). Funciona como hub: apresenta a associação e leva aos sites de cada projeto.
 
 - New Generation: https://newgeneration.one
+- Enjoy 4 Families: https://www.enjoy4famlies.info
+- CrossGifts: https://www.crossgift.org
 - Escola do Sobrenatural: em breve
-- The Best Gift: em breve
 
 ## Como ligar um projeto novo
 
