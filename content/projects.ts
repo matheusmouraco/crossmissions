@@ -21,14 +21,14 @@ export type HubProject = {
  */
 export const hubProjects: HubProject[] = [
   {
-    slug: "new-generation",
-    name: "New Generation",
+    slug: "geracao-do-saber",
+    name: "Geração do Saber",
     kind: "Projeto social",
     description:
       "Educação, alimentação, saúde e apadrinhamento de crianças na Guiné-Bissau. Um futuro de esperança para a próxima geração.",
     url: "https://newgeneration.one",
     urlLabel: "newgeneration.one",
-    logo: { src: "/img/marca/new-generation-branco.png", ratio: 1000 / 380 },
+    logo: { src: "/img/marca/geracao-do-saber-branco.png", ratio: 1000 / 384 },
     image: { src: "/img/fotos/voluntarias-com-criancas.jpg", alt: "Voluntárias brincando com crianças numa aldeia da Guiné-Bissau" },
     tags: ["Educação", "Alimentação", "Saúde", "Apadrinhamento"],
     tint: "#ec722a",
