@@ -25,7 +25,7 @@ export const hubProjects: HubProject[] = [
     name: "New Generation",
     kind: "Projeto social",
     description:
-      "Educação infantil, alimentação, saúde, formação de professores e apadrinhamento de crianças na Guiné-Bissau. Um futuro de esperança para a próxima geração.",
+      "Educação, alimentação, saúde e apadrinhamento de crianças na Guiné-Bissau. Um futuro de esperança para a próxima geração.",
     url: "https://newgeneration.one",
     urlLabel: "newgeneration.one",
     logo: { src: "/img/marca/new-generation-branco.png", ratio: 1000 / 380 },
@@ -55,6 +55,7 @@ export const hubProjects: HubProject[] = [
     url: "https://www.crossgift.org/",
     urlLabel: "crossgift.org",
     logo: { src: "/img/marca/crossgifts-branco.svg", ratio: 2117 / 1657, tall: true },
+    image: { src: "/img/fotos/abraco.jpg", alt: "Duas pessoas num abraço apertado, num jardim", position: "58% 40%" },
     tags: ["Livretos", "Evangelismo", "Porto"],
     tint: "#f26508",
   },
@@ -62,7 +63,10 @@ export const hubProjects: HubProject[] = [
     slug: "escola-do-sobrenatural",
     name: "Escola do Sobrenatural",
     kind: "Formação",
-    description: "Um espaço de formação e crescimento na fé, para viver e anunciar o Reino de Deus. O site está em fase final.",
+    description: "9 módulos em vídeo e o ebook DONS para viver os dons do Espírito: revelação, poder e inspiração.",
+    url: "https://escoladosobrenatural.vercel.app",
+    urlLabel: "escoladosobrenatural.vercel.app",
+    tags: ["Vídeo-aulas", "Ebook", "Dons"],
     tint: "#8f97f5",
   },
 ];

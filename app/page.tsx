@@ -45,6 +45,11 @@ export default function HomePage() {
             <a href={site.instagram.url} target="_blank" rel="noopener noreferrer" className="hover:text-white">
               {site.instagram.handle}
             </a>
+            {site.people.map((p) => (
+              <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer" aria-label={`Instagram de ${p.name}`} className="hover:text-white">
+                {p.handle}
+              </a>
+            ))}
             <MatilabSeal size="sm" className="font-ui" />
           </div>
         </Container>

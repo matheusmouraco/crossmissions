@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { InstagramIcon, WhatsAppIcon } from "@/components/icons";
 import { site } from "@/content/site";
 
@@ -6,9 +7,9 @@ export function SiteHeader() {
   return (
     <header className="shrink-0 bg-navy py-4">
       <div className="mx-auto flex w-full max-w-[1240px] items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
-        <a href="/" className="relative block h-10 shrink-0 md:h-11" style={{ aspectRatio: site.logo.ratio }} aria-label="Cross Missions, página inicial">
+        <Link href="/" className="relative block h-10 shrink-0 md:h-11" style={{ aspectRatio: site.logo.ratio }} aria-label="Cross Missions, página inicial">
           <Image src={site.logo.white} alt="Cross Missions" fill sizes="130px" priority className="object-contain" />
-        </a>
+        </Link>
         <div className="flex items-center gap-2">
           <a
             href={site.instagram.url}

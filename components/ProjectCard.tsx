@@ -101,13 +101,13 @@ export function ProjectCard({ project, featured = false }: { project: HubProject
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Visitar ${project.urlLabel ?? project.name} (abre em nova aba)`}
-            className="group/link inline-flex items-center gap-2 whitespace-nowrap rounded-[var(--radius-btn)] bg-accent px-6 py-3.5 font-ui text-[15px] font-semibold lg:px-5 lg:py-3 lg:text-[14px] xl:text-[15px] text-on-accent shadow-[0_10px_24px_-10px_rgb(252_132_60/0.6)] transition-colors after:absolute after:inset-0 after:content-[''] hover:bg-accent-dark md:text-[16px]"
+            className="group/link inline-flex max-w-full items-center gap-2 whitespace-nowrap rounded-[var(--radius-btn)] bg-accent px-6 py-3.5 font-ui text-[15px] font-semibold lg:px-5 lg:py-3 lg:text-[14px] xl:text-[15px] text-on-accent shadow-[0_10px_24px_-10px_rgb(252_132_60/0.6)] transition-colors after:absolute after:inset-0 after:content-[''] hover:bg-accent-dark md:text-[16px]"
           >
-            <span>
+            <span className="min-w-0 truncate">
               Visitar <span className="lg:hidden">{project.urlLabel ?? "site"}</span>
               <span className="hidden lg:inline">site</span>
             </span>
-            <ArrowUpRight className="size-[18px] transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" aria-hidden />
+            <ArrowUpRight className="size-[18px] shrink-0 transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" aria-hidden />
             <span className="sr-only">(abre em nova aba)</span>
           </a>
         ) : null}

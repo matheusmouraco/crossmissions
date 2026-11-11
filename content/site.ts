@@ -5,14 +5,20 @@ export const site = {
   description:
     "Cross Missions é uma associação cristã que leva o amor de Jesus a crianças, famílias e comunidades nos países de língua portuguesa. Conheça os nossos projetos.",
   vision: "Fazer Jesus conhecido, impactando vidas e comunidades através do amor, da fé e da solidariedade.",
-  phone: "+55 11 98927-0283",
-  phoneHref: "tel:+5511989270283",
+  phone: "+351 931 853 927",
+  phoneHref: "tel:+351931853927",
   email: "contato.cmissions@gmail.com",
   instagram: {
-    handle: "@crossmissionsorg",
-    url: "https://www.instagram.com/crossmissionsorg/",
+    handle: "@crossmissionsoficial",
+    url: "https://www.instagram.com/crossmissionsoficial",
   },
-  whatsapp: "https://api.whatsapp.com/send/?phone=5511989270283&text=Ol%C3%A1%21+Vim+do+site+da+Cross+Missions.",
+  whatsapp: "https://wa.me/351931853927?text=Ol%C3%A1%2C%20vim%20do%20site%20da%20Cross%20Missions.",
+  /** Instagram pessoal do Alessandro e da Mariana Pontes, à frente da Cross Missions */
+  people: [
+    { name: "Ale Pontes", handle: "@aleepontess", url: "https://www.instagram.com/aleepontess" },
+    { name: "Mari Pontes", handle: "@marimmpontes", url: "https://www.instagram.com/marimmpontes" },
+  ],
+
   logo: {
     /** logotipo com texto branco, para fundos escuros */
     white: "/img/marca/cross-missions-branco.png",
