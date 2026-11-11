@@ -28,8 +28,8 @@ export function ProjectCard({ project, featured = false }: { project: HubProject
       aria-labelledby={titleId}
       style={{ "--tint": project.tint } as CSSProperties}
       className={cn(
-        "group grain relative isolate flex flex-col overflow-hidden rounded-[var(--radius-card)] bg-navy p-7 text-white shadow-lift md:p-9 lg:p-8 xl:p-9 short:p-6",
-        featured ? "min-h-[480px] lg:min-h-[320px]" : "min-h-[300px] lg:min-h-[320px]",
+        "group grain relative isolate flex flex-col overflow-hidden rounded-[var(--radius-card)] bg-navy p-7 text-white shadow-lift md:p-9 lg:p-6 xl:p-7 short:p-5",
+        featured ? "min-h-[440px] lg:min-h-[320px]" : "min-h-[300px] lg:min-h-[320px]",
         live && "transition-transform duration-500 hover:-translate-y-1",
       )}
     >
@@ -41,6 +41,7 @@ export function ProjectCard({ project, featured = false }: { project: HubProject
             fill
             sizes="(min-width: 1024px) 520px, 100vw"
             className="-z-20 object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
+            style={project.image.position ? { objectPosition: project.image.position } : undefined}
           />
           <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy from-20% via-navy/85 via-55% to-navy/25" aria-hidden />
         </>
@@ -68,17 +69,20 @@ export function ProjectCard({ project, featured = false }: { project: HubProject
 
       {project.logo ? (
         <h3 id={titleId} className="mt-4">
-          <span className="relative block h-16 xl:h-[72px] short:h-12" style={{ aspectRatio: project.logo.ratio }}>
+          <span
+            className={cn("relative block", project.logo.tall ? "h-20 lg:h-16 xl:h-[72px] short:h-14" : "h-16 lg:h-12 xl:h-14 short:h-10")}
+            style={{ aspectRatio: project.logo.ratio }}
+          >
             <Image src={project.logo.src} alt={project.name} fill sizes="220px" className="object-contain object-left" />
           </span>
         </h3>
       ) : (
-        <h3 id={titleId} className="mt-3 font-display text-[30px] font-extrabold leading-[1.05] tracking-[-0.01em] md:text-[34px]">
+        <h3 id={titleId} className="mt-3 font-display text-[30px] font-extrabold leading-[1.05] tracking-[-0.01em] md:text-[34px] lg:text-[26px] xl:text-[30px] short:text-[24px]">
           {project.name}
         </h3>
       )}
 
-      <p className={cn("mt-4 max-w-xl text-white/80", featured ? "text-[16px] xl:text-[17px]" : "text-[15px] xl:text-[16px]")}>{project.description}</p>
+      <p className="mt-4 max-w-xl text-[16px] text-white/80 lg:mt-3 lg:text-[14px] lg:leading-[1.55] xl:text-[15px]">{project.description}</p>
 
       {project.tags && (
         <ul className="mt-5 flex flex-wrap gap-2 lg:hidden" aria-label="Frentes do projeto">
@@ -90,21 +94,30 @@ export function ProjectCard({ project, featured = false }: { project: HubProject
         </ul>
       )}
 
-      <div className="mt-7 short:mt-5">
+      <div className="mt-7 lg:mt-5 short:mt-4">
         {live ? (
           <a
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group/link inline-flex items-center gap-2 rounded-[var(--radius-btn)] bg-accent px-6 py-3.5 font-ui text-[15px] font-semibold text-on-accent shadow-[0_10px_24px_-10px_rgb(252_132_60/0.6)] transition-colors after:absolute after:inset-0 after:content-[''] hover:bg-accent-dark md:text-[16px]"
+            aria-label={`Visitar ${project.urlLabel ?? project.name} (abre em nova aba)`}
+            className="group/link inline-flex items-center gap-2 whitespace-nowrap rounded-[var(--radius-btn)] bg-accent px-6 py-3.5 font-ui text-[15px] font-semibold lg:px-5 lg:py-3 lg:text-[14px] xl:text-[15px] text-on-accent shadow-[0_10px_24px_-10px_rgb(252_132_60/0.6)] transition-colors after:absolute after:inset-0 after:content-[''] hover:bg-accent-dark md:text-[16px]"
           >
-            Visitar {project.urlLabel ?? "site"}
+            <span>
+              Visitar <span className="lg:hidden">{project.urlLabel ?? "site"}</span>
+              <span className="hidden lg:inline">site</span>
+            </span>
             <ArrowUpRight className="size-[18px] transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" aria-hidden />
             <span className="sr-only">(abre em nova aba)</span>
           </a>
-        ) : (
-          <p className="inline-flex items-center gap-2 rounded-[var(--radius-btn)] border border-dashed border-white/25 px-5 py-3 font-ui text-[14px] font-medium text-white/70">
-            O site deste projeto será lançado em breve
+        ) : null}
+        {live && project.urlLabel ? (
+          <p className="mt-2.5 hidden font-ui text-[13px] text-white/60 lg:block">{project.urlLabel}</p>
+        ) : null}
+        {live ? null : (
+          <p className="inline-flex items-center gap-2 rounded-[var(--radius-btn)] border border-dashed border-white/25 px-5 py-3 font-ui text-[14px] font-medium text-white/70 lg:px-4 lg:py-2.5 lg:text-[13px]">
+            <span className="lg:hidden">O site deste projeto será lançado em breve</span>
+            <span className="hidden lg:inline">Site em preparação</span>
           </p>
         )}
       </div>

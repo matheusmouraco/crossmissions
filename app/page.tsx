@@ -7,7 +7,6 @@ import { hubProjects } from "@/content/projects";
 import { site } from "@/content/site";
 
 export default function HomePage() {
-  const [featured, ...others] = hubProjects;
 
   return (
     <>
@@ -22,13 +21,10 @@ export default function HomePage() {
               className="max-w-none lg:[&_h1]:text-[42px] xl:[&_h1]:text-[48px] short:[&_h1]:mt-2 short:[&_h1]:text-[36px] [&>div]:mt-3 md:[&>div]:text-[17px] short:[&>div]:mt-2 short:[&>div]:text-[15px]"
             />
           </Reveal>
-          <div className="mt-8 grid flex-1 gap-5 lg:mt-7 short:mt-5 lg:grid-cols-[1.45fr_1fr_1fr] xl:gap-6">
-            <Reveal className="[&>article]:h-full">
-              <ProjectCard project={featured} featured />
-            </Reveal>
-            {others.map((project, i) => (
-              <Reveal key={project.slug} delay={0.1 * (i + 1)} className="[&>article]:h-full">
-                <ProjectCard project={project} />
+          <div className="mt-8 grid flex-1 gap-5 lg:mt-7 short:mt-5 md:grid-cols-2 lg:grid-cols-[1.25fr_1.25fr_1fr_1fr] xl:gap-6">
+            {hubProjects.map((project, i) => (
+              <Reveal key={project.slug} delay={0.1 * i} className="[&>article]:h-full">
+                <ProjectCard project={project} featured={Boolean(project.url)} />
               </Reveal>
             ))}
           </div>

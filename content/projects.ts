@@ -9,8 +9,8 @@ export type HubProject = {
   /** como o endereço aparece escrito no botão */
   urlLabel?: string;
   /** logotipo em versão branca (para o fundo escuro do cartão) */
-  logo?: { src: string; ratio: number };
-  image?: { src: string; alt: string };
+  logo?: { src: string; ratio: number; /** logotipo mais alto que largo: mostra um pouco maior */ tall?: boolean };
+  image?: { src: string; alt: string; /** enquadramento da foto (CSS object-position) */ position?: string };
   tags?: string[];
   /** cor de destaque do cartão quando não há foto */
   tint: string;
@@ -32,6 +32,19 @@ export const hubProjects: HubProject[] = [
     image: { src: "/img/fotos/voluntarias-com-criancas.jpg", alt: "Voluntárias brincando com crianças numa aldeia da Guiné-Bissau" },
     tags: ["Educação", "Alimentação", "Saúde", "Apadrinhamento"],
     tint: "#ec722a",
+  },
+  {
+    slug: "enjoy-4-families",
+    name: "Enjoy 4 Families",
+    kind: "Famílias",
+    description:
+      "Encontros e oficinas para famílias em Portugal: diversão para miúdos, conversas úteis para pais e laços familiares mais fortes.",
+    url: "https://www.enjoy4famlies.info/",
+    urlLabel: "enjoy4famlies.info",
+    logo: { src: "/img/marca/enjoy-branco.png", ratio: 884 / 592, tall: true },
+    image: { src: "/img/fotos/equipa-enjoy.jpg", alt: "Equipa Enjoy com t-shirts do projeto num parque", position: "50% 30%" },
+    tags: ["Oficinas", "Família", "Natureza", "Comunidade"],
+    tint: "#f28c38",
   },
   {
     slug: "escola-do-sobrenatural",
