@@ -2,7 +2,7 @@
 
 Site principal da Cross Missions (https://crossmissions.com). Funciona como hub: apresenta a associação e leva aos sites de cada projeto.
 
-- Geração do Saber: https://newgeneration.one
+- Geração do Saber: https://geracaodosaber.org
 - Enjoy 4 Families: https://www.enjoy4famlies.info
 - CrossGifts: https://www.crossgift.org
 - Escola do Sobrenatural: em breve
